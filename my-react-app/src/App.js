@@ -65,12 +65,15 @@ function App() {
   }
 
   return (
+    <>
+    <h1>Home</h1>
     <BrowserRouter>
       <Routes>
         <Route path='/createUser' element={<CreateUser/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
       </Routes>
     </BrowserRouter>
+    </>
   )
 
 }
