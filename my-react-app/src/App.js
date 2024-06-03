@@ -14,14 +14,14 @@ function App() {
   const [password, setPassword] = useState()
 
   useEffect(() => {
-    axios.get('http://localhost:3001/getUsers')
+    axios.get('https://workout-website-server.vercel.app/getUsers')
     .then((users) => {
       setUsers(users.data)
     }).catch(err => console.log(err))
   }, [])
 
   const Submit = () => {
-    axios.post('http://localhost:3001/createUser', {username, password})
+    axios.post('https://workout-website-server.vercel.app/createUser', {username, password})
     .then((users) => {
       console.log(users)
     }).catch(err => console.log(err))
@@ -59,7 +59,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/createUser', {username, email, password})
+    axios.post('https://workout-website-server.vercel.app/createUser', {username, email, password})
     .then(result => console.log(result))
     .catch(err => console.log(err))
   }
