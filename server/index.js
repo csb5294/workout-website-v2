@@ -4,14 +4,12 @@ const cors = require('cors')
 const UserModel = require('./models/Users')
 
 const app = express()
-app.use(cors({
-    origin: ["https://workout-website-eight.vercel.app/createUser"],
-    methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"],
-    credentials: true
-}));
-app.options('/*', (_, res) => {
-    res.sendStatus(200);
-});
+// app.use(cors({
+//     origin: ["https://workout-website-eight.vercel.app/createUser"],
+//     methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"],
+//     credentials: true
+// }));
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect("mongodb+srv://colindude4355:WoQue1OzH10JX8cW@cluster0.wozz0qt.mongodb.net/workout?retryWrites=true&w=majority")
