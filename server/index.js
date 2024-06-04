@@ -23,6 +23,8 @@ app.get('/', (req, res) => {
 //individual get api
 app.get("/getUser/:id", (req, res) => {
 
+    if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
+
     const id = req.params.id;
 
     UserModel.findById({_id:id})
@@ -33,6 +35,8 @@ app.get("/getUser/:id", (req, res) => {
 //put api
 app.put("/updateUser/:id", (req, res) => {
 
+    if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
+
     const id = req.params.id;
 
     UserModel.findByIdAndUpdate({_id:id}, {username: req.body.username, email: req.body.email, password: req.body.password})
@@ -42,6 +46,9 @@ app.put("/updateUser/:id", (req, res) => {
 
 //register api
 app.post("/createUser", (req, res) => {
+
+    if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
+
     const {username, email, password} = req.body;
     UserModel.findOne({email: email})
     .then(user => {
@@ -58,6 +65,9 @@ app.post("/createUser", (req, res) => {
 
 //login api
 app.post("/login", (req, res) => {
+
+    if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
+
     const {email, password} = req.body
     UserModel.findOne({email: email})
     .then(user => {
@@ -77,6 +87,8 @@ app.post("/login", (req, res) => {
 
 //delete api
 app.delete("/deleteUser/:id", (req, res) => {
+
+    if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
 
     const id = req.params.id;
 
