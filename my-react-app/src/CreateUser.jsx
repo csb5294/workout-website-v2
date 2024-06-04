@@ -11,7 +11,7 @@ const CreateUser = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/createUser", {username, email, password})
+        axios.post("https://workout-website-server.vercel.app/createUser", {username, email, password})
         .then(result => {
             console.log(result)
             navigate('/')
