@@ -5,8 +5,7 @@ const UserModel = require('./models/Users')
 
 const app = express()
 app.use(cors({
-    //origin: ["https://workout-website-eight.vercel.app"],
-    origin: true,
+    origin: ["https://workout-website-eight.vercel.app/createUser"],
     methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"],
     credentials: true
 }));
