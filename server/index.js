@@ -13,11 +13,8 @@ app.use(express.json());
 
 mongoose.connect("mongodb+srv://colindude4355:WoQue1OzH10JX8cW@cluster0.wozz0qt.mongodb.net/workout?retryWrites=true&w=majority")
 
-//get api
 app.get('/', (req, res) => {
-    UserModel.find({})
-    .then(users => res.json(users))
-    .catch(err => res.json(err))
+    res.json("Server Home");
 })
 
 //individual get api
