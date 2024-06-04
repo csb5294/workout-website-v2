@@ -7,7 +7,7 @@ const app = express()
 app.use(cors({
     //origin: ["https://workout-website-eight.vercel.app"],
     origin: true,
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "OPTIONS", "PUT", "DELETE"],
     credentials: true
 }));
 app.options('/*', (_, res) => {
