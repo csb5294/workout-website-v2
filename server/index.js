@@ -8,7 +8,7 @@ app.use(cors({
     origin: ["https://workout-website-eight.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
-}))
+}));
 app.use(express.json());
 
 mongoose.connect("mongodb+srv://colindude4355:WoQue1OzH10JX8cW@cluster0.wozz0qt.mongodb.net/workout?retryWrites=true&w=majority")
